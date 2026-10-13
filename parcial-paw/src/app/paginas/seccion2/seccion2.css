@@ -1,0 +1,21 @@
+.skills-panel { padding: 26px; }
+.skills-heading { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 8px; }
+.skills-heading .section-title { margin: 0; }
+.skills-heading > span { color: var(--muted); font-size: 13px; }
+.skills-table { width: 100%; border-collapse: collapse; }
+.skills-table th, .skills-table td { padding: 17px 12px; border-bottom: 1px solid var(--line); text-align: left; }
+.skills-table thead th { color: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; }
+.skills-table tbody th { font-weight: 700; }
+.skill-index { display: inline-block; width: 36px; color: var(--coral); font-family: 'DM Serif Display', Georgia, serif; font-size: 15px; }
+.level-pill { display: inline-block; padding: 6px 9px; border-radius: 4px; font-size: 12px; font-weight: 700; }
+.level-advanced { background: #dff0e5; color: #28664e; }
+.level-intermediate { background: #fff0d4; color: #815a17; }
+.level-basic { background: #e9ece8; color: #59635e; }
+.level-track { width: 100%; min-width: 110px; height: 7px; overflow: hidden; border-radius: 10px; background: #e8ede8; }
+.level-track span { display: block; height: 100%; border-radius: inherit; background: var(--mint-deep); }
+.width-advanced { width: 88%; }
+.width-intermediate { width: 62%; background: var(--coral) !important; }
+.width-basic { width: 36%; background: #91a39a !important; }
+.empty-state { padding: 28px !important; color: var(--muted); text-align: center !important; }
+.skills-note { margin: 14px 2px; color: var(--muted); font-size: 13px; }
+@media (max-width: 580px) { .skills-panel { padding: 18px; } .skills-table th, .skills-table td { padding: 14px 9px; } .skills-table thead th:last-child, .skills-table tbody td:last-child { display: none; } }

@@ -1,1 +1,64 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap');
+
+:root {
+	color-scheme: light;
+	--ink: #183331;
+	--ink-soft: #31504d;
+	--mint: #b8e3cc;
+	--mint-deep: #2e7661;
+	--coral: #e8795d;
+	--paper: #f4f7f2;
+	--line: #dce5dd;
+	--muted: #687873;
+}
+
+* { box-sizing: border-box; }
+
+body {
+	margin: 0;
+	min-width: 320px;
+	background-color: var(--paper);
+	background-image: radial-gradient(#dce6db 0.7px, transparent 0.7px);
+	background-size: 18px 18px;
+	color: var(--ink);
+	font-family: 'DM Sans', 'Trebuchet MS', sans-serif;
+}
+
+h1, h2, h3, h4, h5 { color: var(--ink); }
+h1, h2, h3 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; }
+p { line-height: 1.7; }
+a { color: var(--mint-deep); }
+
+.page-intro { margin-bottom: 30px; }
+.eyebrow { margin-bottom: 8px; color: var(--mint-deep); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.page-intro h1 { margin-bottom: 10px; font-size: clamp(2rem, 4vw, 3rem); }
+.page-intro p { max-width: 680px; margin: 0; color: var(--muted); }
+
+.surface {
+	border: 1px solid var(--line);
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.92);
+	box-shadow: 0 12px 30px rgba(24, 51, 49, 0.06);
+}
+
+.section-title { margin-bottom: 16px; font-size: 1.45rem; }
+.button-primary {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 44px;
+	padding: 0 18px;
+	border: 0;
+	border-radius: 6px;
+	background: var(--ink);
+	color: white;
+	font: inherit;
+	font-weight: 700;
+	text-decoration: none;
+	cursor: pointer;
+}
+.button-primary:hover { background: var(--mint-deep); color: white; }
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+}

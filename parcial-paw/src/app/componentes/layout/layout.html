@@ -1,0 +1,19 @@
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" routerLink="/hoja-de-vida" aria-label="Ir a hoja de vida">
+      <span class="brand-mark">JG</span>
+      <span class="brand-copy"><strong>Juan Granada</strong><small>Perfil profesional</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a routerLink="/hoja-de-vida" routerLinkActive="is-active" ariaCurrentWhenActive="page">Perfil</a>
+      <a routerLink="/seccion3" routerLinkActive="is-active" ariaCurrentWhenActive="page">Formación y proyectos</a>
+      <a routerLink="/perfil-complementario" routerLinkActive="is-active" ariaCurrentWhenActive="page">Trayectoria</a>
+      <a routerLink="/registro" routerLinkActive="is-active" ariaCurrentWhenActive="page">Registro</a>
+      <a routerLink="/competencias" routerLinkActive="is-active" ariaCurrentWhenActive="page">Competencias</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page-shell">
+  <router-outlet></router-outlet>
+</main>

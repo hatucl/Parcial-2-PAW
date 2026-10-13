@@ -1,0 +1,26 @@
+:host { display: block; }
+.registration-layout { display: grid; grid-template-columns: minmax(250px, 0.78fr) minmax(0, 1.22fr); overflow: hidden; border-radius: 8px; background: var(--ink); }
+.registration-aside { padding: 32px; color: #fff; }
+.registration-aside .eyebrow { color: var(--mint); }
+.registration-aside h2 { max-width: 320px; margin: 0 0 14px; color: #fff; font-size: 2rem; }
+.registration-aside > p:not(.eyebrow) { color: #cad8d2; font-size: 14px; }
+.aside-rule { width: 42px; height: 3px; margin: 26px 0 18px; background: var(--coral); }
+.aside-label { color: var(--mint); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.registration-aside ul { display: grid; gap: 9px; margin: 0; padding-left: 18px; color: #e3ebe7; font-size: 14px; }
+.registration-form-panel { min-height: 100%; padding: 32px; border: 0; border-radius: 0; }
+.registration-form-panel form { display: grid; }
+.form-heading { margin-bottom: 18px; }
+.form-heading h2, .success-message h2 { margin: 0; font-size: 1.65rem; }
+.registration-form-panel label { margin: 14px 0 7px; font-size: 13px; font-weight: 700; }
+.registration-form-panel label span { color: var(--muted); font-weight: 400; }
+.registration-form-panel input, .registration-form-panel select, .registration-form-panel textarea { width: 100%; min-height: 45px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 5px; background: #fbfcfa; color: var(--ink); font: inherit; }
+.registration-form-panel textarea { resize: vertical; }
+.registration-form-panel input:focus, .registration-form-panel select:focus, .registration-form-panel textarea:focus { outline: 3px solid rgba(46, 118, 97, 0.16); border-color: var(--mint-deep); }
+.submit-button { gap: 10px; justify-self: start; margin-top: 22px; }
+.submit-button:disabled { background: #99aaa1; cursor: not-allowed; }
+.privacy-note { margin: 12px 0 0; color: var(--muted); font-size: 11px; }
+.success-message { display: grid; justify-items: start; align-content: center; min-height: 440px; }
+.success-mark { width: 46px; aspect-ratio: 1; display: grid; place-items: center; margin-bottom: 22px; border-radius: 50%; background: var(--mint); color: var(--ink); font-size: 23px; }
+.success-message > p:not(.eyebrow) { max-width: 430px; color: var(--muted); }
+.success-message .button-primary { margin-top: 12px; }
+@media (max-width: 720px) { .registration-layout { grid-template-columns: 1fr; } .registration-aside, .registration-form-panel { padding: 23px; } .success-message { min-height: 340px; } }

@@ -1,0 +1,20 @@
+:host { display: block; }
+.focus-banner { display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: start; padding: 27px; background: #e7f1e8; }
+.focus-mark { width: 58px; aspect-ratio: 1; display: grid; place-items: center; border-radius: 8px; background: var(--ink); color: var(--mint); font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; }
+.focus-banner h2 { margin: 0 0 8px; font-size: 1.55rem; }
+.focus-banner p:last-child { max-width: 760px; margin: 0; color: var(--muted); }
+.detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+.detail-panel { padding: 25px; }
+.detail-list { display: grid; gap: 20px; margin: 0; padding: 0; list-style: none; }
+.detail-list li, .interest-item { display: grid; grid-template-columns: 34px 1fr; gap: 10px; }
+.detail-list li > span, .interest-item > span { color: var(--coral); font-family: 'DM Serif Display', Georgia, serif; }
+.detail-list strong, .interest-item strong { display: block; margin-bottom: 3px; }
+.detail-list p, .interest-item p { margin: 0; color: var(--muted); font-size: 13px; }
+.interests-panel { background: var(--ink); color: #fff; }
+.interests-panel h2 { color: #fff; }
+.interests-panel .eyebrow { color: var(--mint); }
+.interests-panel .interest-item { padding: 13px 0; border-top: 1px solid rgba(255, 255, 255, 0.16); }
+.interests-panel .interest-item p { color: #c4d2cc; }
+.journey-footer { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 26px 4px 0; }
+.journey-footer p { margin: 0; font-weight: 700; }
+@media (max-width: 680px) { .detail-grid { grid-template-columns: 1fr; } .focus-banner { padding: 21px; } .journey-footer { align-items: flex-start; flex-direction: column; } }

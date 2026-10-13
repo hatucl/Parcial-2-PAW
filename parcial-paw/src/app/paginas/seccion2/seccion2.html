@@ -1,0 +1,30 @@
+<section class="page-intro">
+  <p class="eyebrow">Herramientas de trabajo</p>
+  <h1>Competencias técnicas</h1>
+  <p>Tecnologías y herramientas que forman parte de mi aprendizaje y de los proyectos que desarrollo.</p>
+</section>
+
+<section class="skills-panel surface">
+  <div class="skills-heading">
+    <div><p class="eyebrow">Resumen</p><h2 class="section-title">Mi caja de herramientas</h2></div>
+    <span>{{ misHabilidades.length }} tecnologías</span>
+  </div>
+  <div class="table-responsive">
+    <table class="skills-table">
+      <thead><tr><th scope="col">Tecnología</th><th scope="col">Nivel actual</th><th scope="col">Progreso</th></tr></thead>
+      <tbody>
+        @for (habilidad of misHabilidades; track habilidad.id) {
+          <tr>
+            <th scope="row"><span class="skill-index">0{{ habilidad.id }}</span>{{ habilidad.nombre }}</th>
+            <td><span class="level-pill" [class.level-advanced]="habilidad.nivel === 'Avanzado'" [class.level-intermediate]="habilidad.nivel === 'Intermedio'" [class.level-basic]="habilidad.nivel === 'Básico'">{{ habilidad.nivel }}</span></td>
+            <td><div class="level-track" role="img" [attr.aria-label]="'Nivel ' + habilidad.nivel"><span [class.width-advanced]="habilidad.nivel === 'Avanzado'" [class.width-intermediate]="habilidad.nivel === 'Intermedio'" [class.width-basic]="habilidad.nivel === 'Básico'"></span></div></td>
+          </tr>
+        } @empty {
+          <tr><td colspan="3" class="empty-state">Aún no hay competencias registradas.</td></tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<p class="skills-note">Los niveles representan mi experiencia actual y evolucionan con cada nuevo proyecto.</p>

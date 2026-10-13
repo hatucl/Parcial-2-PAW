@@ -1,0 +1,52 @@
+<section class="page-intro">
+  <p class="eyebrow">Contacto profesional</p>
+  <h1>Registro de oportunidades</h1>
+  <p>Comparte tus datos y cuéntame qué tipo de colaboración, práctica o proyecto tienes en mente.</p>
+</section>
+
+<div class="registration-layout">
+  <aside class="registration-aside">
+    <p class="eyebrow">Juan Camilo Granada</p>
+    <h2>Hablemos de una buena idea.</h2>
+    <p>Este formulario permite dejar una solicitud de contacto en esta página. No envía información a un servidor.</p>
+    <div class="aside-rule"></div>
+    <p class="aside-label">Intereses actuales</p>
+    <ul><li>Prácticas profesionales</li><li>Proyectos web</li><li>Colaboración académica</li></ul>
+  </aside>
+
+  <section class="registration-form-panel surface">
+    @if (registrado) {
+      <div class="success-message" role="status">
+        <span class="success-mark" aria-hidden="true">✓</span>
+        <p class="eyebrow">Registro completado</p>
+        <h2>Gracias, {{ datos.nombre }}.</h2>
+        <p>Tu información quedó confirmada en este formulario. Para hacerla persistente se necesitaría conectar un servicio backend.</p>
+        <button class="button-primary" type="button" (click)="registrado = false">Editar registro</button>
+      </div>
+    } @else {
+      <form #registroForm="ngForm" (ngSubmit)="registrar()">
+        <div class="form-heading"><p class="eyebrow">Formulario</p><h2>Cuéntame un poco</h2></div>
+        <label for="nombre">Nombre completo</label>
+        <input id="nombre" name="nombre" type="text" [(ngModel)]="datos.nombre" required minlength="3" placeholder="Tu nombre" autocomplete="name">
+
+        <label for="correo">Correo electrónico</label>
+        <input id="correo" name="correo" type="email" [(ngModel)]="datos.correo" required placeholder="nombre@correo.com" autocomplete="email">
+
+        <label for="interes">¿Qué te interesa?</label>
+        <select id="interes" name="interes" [(ngModel)]="datos.interes" required>
+          <option value="" disabled>Selecciona una opción</option>
+          <option value="practica">Práctica profesional</option>
+          <option value="proyecto">Proyecto de desarrollo</option>
+          <option value="colaboracion">Colaboración académica</option>
+          <option value="otro">Otro</option>
+        </select>
+
+        <label for="mensaje">Mensaje <span>(opcional)</span></label>
+        <textarea id="mensaje" name="mensaje" [(ngModel)]="datos.mensaje" rows="4" placeholder="Cuéntame brevemente sobre la oportunidad"></textarea>
+
+        <button class="button-primary submit-button" type="submit" [disabled]="registroForm.invalid">Enviar registro <span aria-hidden="true">→</span></button>
+        <p class="privacy-note">La información se usa únicamente para mostrar la confirmación en esta sesión.</p>
+      </form>
+    }
+  </section>
+</div>
