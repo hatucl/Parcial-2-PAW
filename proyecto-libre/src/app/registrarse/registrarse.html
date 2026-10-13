@@ -1,0 +1,10 @@
+<section class="page-wrap register-page">
+	<div class="register-art"><span class="eyebrow-text">PIXEL FORGE · PLAYER ACCOUNT</span><div class="register-symbol">P<span>F</span></div><p>Una buena partida<br>siempre empieza<br>con una historia.</p><span class="art-caption">PRESS START TO CONTINUE</span></div>
+	<div class="register-form-wrap"><div class="eyebrow"><span class="eyebrow-line"></span> NUEVO JUGADOR</div>
+		@if (submitted()) { <div class="register-success" role="status"><span>✓</span><h1>Ya estás en el juego.</h1><p>Tu cuenta quedó lista. Nos vemos en la tienda.</p><a class="button button-dark" routerLink="/catalogo">Explorar juegos</a></div> }
+		@else {
+			<h1>Crear cuenta</h1><p class="form-intro">Guarda tus favoritos y entérate primero de los lanzamientos.</p>
+			<form (submit)="submit($event)"><label for="player-name">Nombre de jugador</label><input id="player-name" name="name" type="text" placeholder="¿Cómo te llamamos?" autocomplete="name" required minlength="2"><label for="player-email">Correo electrónico</label><input id="player-email" name="email" type="email" placeholder="tu@correo.com" autocomplete="email" required><label for="player-password">Contraseña</label><input id="player-password" name="password" type="password" placeholder="Mínimo 8 caracteres" autocomplete="new-password" required minlength="8"><label class="terms-check"><input type="checkbox" name="terms" required><span>Acepto los términos de uso y la política de privacidad.</span></label><button class="button button-dark submit-button" type="submit">Crear mi cuenta <span aria-hidden="true">↗</span></button></form>
+		}
+	</div>
+</section>

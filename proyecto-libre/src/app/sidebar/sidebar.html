@@ -1,0 +1,17 @@
+<header class="site-header">
+    <nav class="site-nav" aria-label="Navegación principal">
+        <a class="site-brand" routerLink="/catalogo" aria-label="Pixel Forge, catálogo">
+            <span class="brand-mark" aria-hidden="true">PF</span><span>PIXEL <b>FORGE</b></span>
+        </a>
+        <div class="nav-links">
+            <a routerLink="/catalogo" routerLinkActive="active" ariaCurrentWhenActive="page">Catálogo</a>
+            <a routerLink="/ofertas" routerLinkActive="active" ariaCurrentWhenActive="page">Ofertas</a>
+            <a routerLink="/preventa" routerLinkActive="active" ariaCurrentWhenActive="page">Próximamente</a>
+            <a routerLink="/sobre-nosotros" routerLinkActive="active" ariaCurrentWhenActive="page">Nosotros</a>
+        </div>
+        <div class="nav-actions">
+            <a class="wishlist-link" routerLink="/deseos" aria-label="Lista de deseos"><span aria-hidden="true">♡</span><span>Deseos</span><span class="wishlist-count">{{ store.wishlistIds().length }}</span></a>
+            <a class="account-link" routerLink="/registrarse">Crear cuenta</a>
+        </div>
+    </nav>
+</header>

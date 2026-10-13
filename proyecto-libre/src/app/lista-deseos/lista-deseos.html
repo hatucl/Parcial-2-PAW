@@ -1,0 +1,14 @@
+<section class="page-wrap subpage">
+  @if (store.notice()) { <div class="notice" role="status">{{ store.notice() }}</div> }
+  <div class="eyebrow"><span class="eyebrow-line"></span> PARA DESPUÉS, PARA SIEMPRE</div>
+  <div class="page-intro wishlist-intro"><div><h1>Tu lista.<br><em>Tus próximas partidas.</em></h1><p>Guarda aquí los juegos que te llamaron la atención.</p></div><span class="wishlist-total">{{ wishlistGames().length }} <small>GUARDADOS</small></span></div>
+  @if (wishlistGames().length) {
+    <div class="game-grid">
+      @for (game of wishlistGames(); track game.id) {
+        <article class="game-card"><div class="game-art card-art art-{{ game.color }}"><button class="heart-button is-saved" type="button" (click)="store.toggleWishlist(game)" aria-label="Quitar de deseos">♥</button><span class="art-title">{{ game.title }}</span><span class="art-caption">ESPACIO PARA IMAGEN</span></div><div class="game-info"><div class="game-title-row"><h2>{{ game.title }}</h2><span class="game-label">{{ game.genre }}</span></div><p>{{ game.platform }}</p><div class="purchase-row"><div class="price-stack">@if (game.originalPrice) { <s>{{ store.formatPrice(game.originalPrice) }}</s> }<strong>{{ store.formatPrice(game.price) }}</strong></div><div class="game-actions"><button class="button button-quiet" type="button" (click)="store.tryGame(game)">Probar</button><button class="button button-dark" type="button" (click)="store.buyGame(game)">Comprar</button></div></div></div></article>
+      }
+    </div>
+  } @else {
+    <div class="empty-wishlist"><span aria-hidden="true">♡</span><h2>Aún no guardaste ningún juego.</h2><p>Explora el catálogo y toca el corazón para guardar tus favoritos.</p><a class="button button-dark" routerLink="/catalogo">Ir al catálogo</a></div>
+  }
+</section>

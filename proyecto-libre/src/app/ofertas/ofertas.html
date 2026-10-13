@@ -1,0 +1,10 @@
+<section class="page-wrap subpage">
+	@if (store.notice()) { <div class="notice" role="status">{{ store.notice() }}</div> }
+	<div class="eyebrow"><span class="eyebrow-line"></span> OFERTAS POR TIEMPO LIMITADO</div>
+	<div class="page-intro offer-intro"><div><h1>Buenos juegos.<br><em>Mejores precios.</em></h1><p>La aventura cuesta menos esta semana. Las ofertas son las mismas del catálogo, sin letra pequeña.</p></div><div class="offer-count"><strong>{{ store.onSale.length }}</strong><span>JUEGOS<br>EN OFERTA</span></div></div>
+	<div class="game-grid">
+		@for (game of store.onSale; track game.id) {
+			<article class="game-card"><div class="game-art card-art art-{{ game.color }}"><span class="discount-badge">-{{ game.discount }}%</span><button class="heart-button" type="button" (click)="store.toggleWishlist(game)" [attr.aria-label]="store.hasInWishlist(game) ? 'Quitar de deseos' : 'Agregar a deseos'" [attr.aria-pressed]="store.hasInWishlist(game)">{{ store.hasInWishlist(game) ? '♥' : '♡' }}</button><span class="art-title">{{ game.title }}</span><span class="art-caption">ESPACIO PARA IMAGEN</span></div><div class="game-info"><div class="game-title-row"><h2>{{ game.title }}</h2><span class="game-label">{{ game.genre }}</span></div><p>{{ game.description }}</p><div class="purchase-row"><div class="price-stack"><s>{{ store.formatPrice(game.originalPrice!) }}</s><strong>{{ store.formatPrice(game.price) }}</strong></div><div class="game-actions"><button class="button button-quiet" type="button" (click)="store.tryGame(game)">Probar</button><button class="button button-dark" type="button" (click)="store.buyGame(game)">Comprar</button></div></div></div></article>
+		} @empty { <p class="empty-state">No hay ofertas disponibles por ahora.</p> }
+	</div>
+</section>

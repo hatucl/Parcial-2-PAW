@@ -1,0 +1,28 @@
+<section class="catalog-page page-wrap">
+	@if (store.notice()) { <div class="notice" role="status">{{ store.notice() }}</div> }
+	<div class="eyebrow"><span class="eyebrow-line"></span> JUEGA A TU MANERA</div>
+	<section class="hero-banner">
+		<div class="hero-copy"><p class="hero-kicker">NUEVAS HISTORIAS, NUEVOS MUNDOS</p><h1>Tu próxima<br><em>obsesión</em> empieza aquí.</h1><p class="hero-description">Descubre juegos que se quedan contigo. Seleccionados para quienes siempre buscan una nueva aventura.</p><a class="button button-light" href="#seleccion">Explorar catálogo <span aria-hidden="true">↘</span></a></div>
+		<div class="hero-art game-art art-void" role="img" aria-label="Espacio reservado para arte de Void Runner"><span class="art-orbit orbit-one"></span><span class="art-orbit orbit-two"></span><span class="art-stamp">01<br><small>THE VOID</small></span><span class="art-title">VOID<br><b>RUNNER</b></span><span class="art-caption">ARTE DEL JUEGO</span></div>
+		<span class="hero-index">01 <i>/</i> 04</span>
+	</section>
+	<section class="featured-section" aria-labelledby="featured-title">
+		<div class="section-heading"><div><p class="eyebrow-text">SELECCIÓN PIXEL FORGE</p><h2 id="featured-title">En portada <span>↗</span></h2></div><div class="carousel-controls"><button class="icon-button" type="button" aria-label="Desplazar juegos a la izquierda" (click)="scrollFeatured(-1)">←</button><button class="icon-button" type="button" aria-label="Desplazar juegos a la derecha" (click)="scrollFeatured(1)">→</button></div></div>
+		<div class="featured-track" #featuredTrack>
+			@for (game of store.games.slice(0, 4); track game.id) {
+				<article class="feature-card"><div class="game-art art-{{ game.color }} feature-art"><span class="art-label">{{ game.label }}</span><span class="art-title">{{ game.title }}</span><span class="art-caption">ARTE DEL JUEGO</span></div><div class="feature-meta"><span>{{ game.genre }}</span><span>{{ game.platform }}</span></div></article>
+			}
+		</div>
+	</section>
+	<section class="game-list-section" id="seleccion" aria-labelledby="catalog-title">
+		<div class="section-heading catalog-heading"><div><p class="eyebrow-text">PARA TU SIGUIENTE PARTIDA</p><h2 id="catalog-title">Todo el catálogo</h2></div><span class="catalog-total">{{ store.games.length }} JUEGOS</span></div>
+		<div class="game-grid">
+			@for (game of store.games; track game.id) {
+				<article class="game-card"><div class="game-art card-art art-{{ game.color }}">
+					@if (game.discount) { <span class="discount-badge">-{{ game.discount }}%</span> }
+					<button class="heart-button" type="button" (click)="store.toggleWishlist(game)" [attr.aria-label]="store.hasInWishlist(game) ? 'Quitar de deseos' : 'Agregar a deseos'" [attr.aria-pressed]="store.hasInWishlist(game)">{{ store.hasInWishlist(game) ? '♥' : '♡' }}</button><span class="art-title">{{ game.title }}</span><span class="art-caption">ESPACIO PARA IMAGEN</span>
+				</div><div class="game-info"><div class="game-title-row"><h3>{{ game.title }}</h3><span class="game-label">{{ game.label }}</span></div><p>{{ game.genre }} <span>·</span> {{ game.platform }}</p><div class="purchase-row"><div class="price-stack">@if (game.originalPrice) { <s>{{ store.formatPrice(game.originalPrice) }}</s> }<strong>{{ store.formatPrice(game.price) }}</strong></div><div class="game-actions"><button class="button button-quiet" type="button" (click)="store.tryGame(game)">Probar</button><button class="button button-dark" type="button" (click)="store.buyGame(game)">Comprar</button></div></div></div></article>
+			}
+		</div>
+	</section>
+</section>
