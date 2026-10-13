@@ -10,7 +10,6 @@ nav {
     background: rgb(84, 95, 119);
     border-bottom: 1px solid var(--pico-muted-border-color);
 }
-
 nav a {
     border-radius: 8px;
     padding: .4rem .8rem;
@@ -38,4 +37,5 @@ nav h2 {
 
 .container p {
     font-size: 1.2rem;
+
 }
