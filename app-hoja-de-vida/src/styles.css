@@ -1,0 +1,56 @@
+:root {
+    color-scheme: light;
+    font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    color: #172b4d;
+    background: #f8faff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-width: 320px;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background:
+        radial-gradient(ellipse at 8% 0%, rgb(224 235 255 / 48%), transparent 36rem),
+        #f8faff;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+a {
+    color: #2864d7;
+}
+
+::selection {
+    background: #d8e5ff;
+    color: #172b4d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
