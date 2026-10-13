@@ -1,0 +1,31 @@
+<section class="section learning-section" id="temas" aria-labelledby="topics-title">
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">01 — CONOCIMIENTOS</p>
+            <h2 id="topics-title">Ideas que se vuelven herramientas.</h2>
+        </div>
+        <p class="section-intro">
+            Estos son algunos de los fundamentos que he estudiado y aplicado a lo largo del curso.
+        </p>
+    </div>
+
+    <div class="topic-grid">
+        @for (topic of topics(); track topic.id) {
+            <article class="topic-card">
+                <div class="topic-card-top">
+                    <span [class]="'topic-icon ' + topic.color" aria-hidden="true">
+                        {{ topic.icon }}
+                    </span>
+                    <span class="topic-index">{{ topic.id }}</span>
+                </div>
+                <h3>{{ topic.title }}</h3>
+                <p>{{ topic.description }}</p>
+                <ul class="topic-tags" [attr.aria-label]="'Conceptos de ' + topic.title">
+                    @for (concept of topic.concepts; track concept) {
+                        <li>{{ concept }}</li>
+                    }
+                </ul>
+            </article>
+        }
+    </div>
+</section>

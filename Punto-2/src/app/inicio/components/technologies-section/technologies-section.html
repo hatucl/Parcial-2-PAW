@@ -1,0 +1,18 @@
+<section class="technology-band" id="tecnologias" aria-labelledby="tech-title">
+    <div class="technology-copy">
+        <p class="eyebrow">02 — HERRAMIENTAS</p>
+        <h2 id="tech-title">Tecnología para<br>hacerlo realidad.</h2>
+        <p>El conjunto de lenguajes y herramientas que he utilizado para experimentar, construir y aprender.</p>
+    </div>
+    <ul class="technology-list" aria-label="Tecnologías utilizadas">
+        @for (technology of technologies(); track technology.name) {
+            <li>
+                <span [class]="'tech-mark ' + technology.color" aria-hidden="true">
+                    {{ technology.mark }}
+                </span>
+                <span>{{ technology.name }}</span>
+                <span class="tech-category">{{ technology.category }}</span>
+            </li>
+        }
+    </ul>
+</section>

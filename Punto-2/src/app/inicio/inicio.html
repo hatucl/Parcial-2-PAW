@@ -1,0 +1,57 @@
+<header class="topbar">
+    <a class="brand" routerLink="/inicio" aria-label="Bitácora, inicio">
+        <span class="brand-icon" aria-hidden="true">B</span>
+        <span>Bitácora<span class="brand-light"> / aprendizaje</span></span>
+    </a>
+    <nav aria-label="Navegación de la página">
+        <a href="#temas">Temas</a>
+        <a href="#tecnologias">Tecnologías</a>
+        <a href="#proyectos">Proyectos</a>
+    </nav>
+</header>
+
+<main>
+    <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+            <p class="eyebrow"><span class="live-dot"></span> MI RECORRIDO EN EL CURSO</p>
+            <h1 id="page-title">Aprender.<br><span>Construir.</span><br>Volver a aprender.</h1>
+            <p class="hero-description">
+                Una bitácora de los temas, herramientas y proyectos que han formado parte de mi
+                proceso de aprendizaje en Ingeniería de Sistemas.
+            </p>
+            <a class="hero-link" href="#temas">Explorar mi recorrido <span aria-hidden="true">↓</span></a>
+        </div>
+        <aside class="hero-card" aria-label="Resumen del proceso">
+            <div class="hero-symbol" aria-hidden="true">&lt;/&gt;</div>
+            <p class="hero-card-caption">DEL CONCEPTO A LA PRÁCTICA</p>
+        </aside>
+        <div class="hero-footer">
+            <span>ESTUDIANTE DE INGENIERÍA DE SISTEMAS</span>
+            <span>APRENDIZAJE CONTINUO <span aria-hidden="true">↗</span></span>
+        </div>
+    </section>
+
+    <app-topics-section [topics]="topics" />
+    <app-technologies-section [technologies]="technologies" />
+    <app-projects-section [projects]="projects" />
+
+    <section class="reflection" aria-labelledby="reflection-title">
+        <span class="reflection-mark" aria-hidden="true">“</span>
+        <div>
+            <p class="eyebrow">LO QUE ME LLEVO</p>
+            <h2 id="reflection-title">Entender es el primer paso.<br><span>Crear es cuando el aprendizaje cobra sentido.</span></h2>
+        </div>
+        <p class="reflection-note">
+            Sigo explorando, preguntando y construyendo. Este recorrido apenas comienza.
+        </p>
+    </section>
+</main>
+
+<footer class="page-footer">
+    <a class="brand" routerLink="/inicio">
+        <span class="brand-icon" aria-hidden="true">B</span>
+        <span>Bitácora<span class="brand-light"> / aprendizaje</span></span>
+    </a>
+    <p>Hecho con curiosidad y ganas de aprender.</p>
+    <a class="back-to-top" href="#page-title">Volver arriba ↑</a>
+</footer>
